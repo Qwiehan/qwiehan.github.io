@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwiehan的个人主页</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            /* 使用back.png作为背景 */
+            background:
+                linear-gradient(rgba(245, 247, 250, 0.562), rgba(228, 232, 240, 0.541)),
+                /* 半透明遮罩让文字更清晰 */
+                url('back.png') center center fixed;
+            background-size: cover;
+            /* 背景图铺满 */
+            background-attachment: fixed;
+            /* 固定背景 */
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        ， {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 头部区域 */
+        .header {
+            text-align: center;
+            padding: 40px 0 30px;
+        }
+
+        .site-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0078d4, #106ebe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .site-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.267);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* 个人信息区域 */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid rgba(255, 255, 255, 0.158);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            flex-shrink: 0;
+        }
+
+        .profile-content {
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: #0078d4;
+            font-size: 1.5rem;
+        }
+
+        .profile-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .detail-item {
+            background: rgba(255, 255, 255, 0.116);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .detail-value {
+            color: #1a1a1a;
+            font-size: 1.1rem;
+        }
+
+        /* 项目展示 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            color: #0078d4;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .project-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .skill-name {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        /* 友情链接 */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .link-card {
+            background: rgba(255, 255, 255, 0.178);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.178);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-icon {
+            font-size: 2rem;
+            color: #0078d4;
+            margin-bottom: 15px;
+        }
+
+        .link-url {
+            color: #0078d4;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* 联系方式 */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-item i {
+            color: #0078d4;
+            font-size: 1.5rem;
+            width: 30px;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+            color: #666;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .site-title {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .profile-details,
+            .projects-grid,
+            .skills-grid,
+            .links-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-title {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 网站头部 -->
+        <header class="header">
+            <img src="title.png" alt="网站标题" style="width:60vw; margin:0 auto; display:block;">
+            <h1 class="site-title">我的个人主页</h1>
+            <p class="site-subtitle">欢迎来到我的个人空间，分享技术、生活和思考</p>
+        </header>
+
+        <!-- 个人信息区域 -->
+        <section class="card profile-section">
+            <img src="head.jpg" alt="个人头像" class="avatar" id="titleImage">
+            <div class="profile-content">
+                <h2 class="section-title"><i class="fas fa-user"></i> 个人信息</h2>
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <div class="detail-label">昵称</div>
+                        <div class="detail-value">Qwiehan</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">所在地</div>
+                        <div class="detail-value">家中 or 学校</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">坐牢经验</div>
+                        <div class="detail-value">在学校坐过几年劳，至今仍在服刑</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">专业方向</div>
+                        <div class="detail-value">打游戏</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">成就</div>
+                        <div class="detail-value">曾经在睡着的情况下写完一套试卷</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人简介 -->
+        <section class="card">
+            <h2 class="section-title"><i class="fas fa-file-alt"></i> 个人简介</h2>
+            <div style="line-height: 1.8; color: #444; font-size: 1.1rem;">
+                <p>一个爱听术的私宅初中生，拥有114514年宅男经验</p>
+            </div>
+        </section>
+
+        <!-- 兴趣爱好 -->
+        <!--<section class="card">
+            <h2 class="section-title"><i class="fas fa-heart"></i> 兴趣爱好</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                <div style="background: rgba(0, 120, 212, 0.1); color: #0078d4; padding: 10px 20px; border-radius: 20px; font-weight: 500;">
+                    <i class="fas fa-book"></i> 技术阅读
+                </div>
+                <div style="background: rgba(0, 120, 212, 0.1); color: #0078d4; padding: 10px 20px; border-radius: 20px; font-weight: 500;">
+                    <i class="fas fa-hiking"></i> 户外运动
+                </div>
+                <div style="background: rgba(0, 120, 212, 0.1); color: #0078d4; padding: 10px 20px; border-radius: 20px; font-weight: 500;">
+                    <i class="fas fa-camera"></i> 摄影
+                </div>
+                <div style="background: rgba(0, 120, 212, 0.1); color: #0078d4; padding: 10px 20px; border-radius: 20px; font-weight: 500;">
+                    <i class="fas fa-music"></i> 音乐
+                </div>
+                <div style="background: rgba(0, 120, 212, 0.1); color: #0078d4; padding: 10px 20px; border-radius: 20px; font-weight: 500;">
+                    <i class="fas fa-gamepad"></i> 游戏开发
+                </div>
+            </div>
+        </section>-->
+
+        <!-- 友情链接区域 -->
+        <section class="card">
+            <h2 class="section-title"><i class="fas fa-link"></i> 友情链接</h2>
+            <div class="links-grid">
+                <a href="https://space.bilibili.com/3494379144612473" target="_blank" rel="noopener noreferrer"
+                    class="link-card">
+                    <div class="link-icon">
+                        <img src="/photos/jiao.webp" style="width: 40px; height: 40px; object-fit: cover;">
+                    </div>
+                    <div class="link-url">_饺_ B站指令音乐大佬的个人空间</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 联系方式区域 -->
+        <section class="card">
+            <h2 class="section-title"><i class="fas fa-envelope"></i> 仙人指路</h2>
+            <div class="contact-grid">
+                <a href="https://space.bilibili.com/3546608916498567" target="_blank" rel="noopener noreferrer"
+                    class="link-card">
+                    <div class="link-icon">
+                        <img src="/photos/bili_tv.ico" style="width: 40px; height: 40px; object-fit: cover;">
+                    </div>
+                    <div class="link-url">我的B站个人空间</div>
+                </a>
+                <a href="https://www.kuaishou.com/profile/3xe35fsimmdikzi" target="_blank" rel="noopener noreferrer"
+                    class="link-card">
+                    <div class="link-icon">
+                        <img src="/photos/kuaishou.ico" style="width: 40px; height: 40px; object-fit: cover;">
+                    </div>
+                    <div class="link-url">我的快手个人空间</div>
+                </a>
+                <a href="https://www.douyin.com/user/MS4wLjABAAAAT4THVThWBHinN2qnefkw8KvnP__cRjtjeft1_g5EvFqiTrzGsKvN_cGR3D-vCKFu?from_tab_name=main"
+                    target="_blank" rel="noopener noreferrer" class="link-card">
+                    <div class="link-icon">
+                        <img src="/photos/douyin.png" style="width: 40px; height: 40px; object-fit: cover;">
+                    </div>
+                    <div class="link-url">我的抖音个人空间</div>
+                </a>
+                <a href="tools.html"
+                    target="_blank" rel="noopener noreferrer" class="link-card">
+                    <div class="link-icon">
+                        <img src="/photos/cb.png" style="width: 40px; height: 40px; object-fit: cover;">
+                    </div>
+                    <div class="link-url">妙妙小工具&游戏</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p id="copyright">个人主页</p>
+            <p id="footerText">你考清华，我烤地瓜，我们都有光明的未来</p>
+        </footer>
+    </div>
+
+    <script>
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function () {
+            // 更新版权年份
+            const year = new Date().getFullYear();
+            document.getElementById('copyright').textContent = `© ${year} 个人主页`;
+
+            // 为卡片添加悬停效果
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-5px)';
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+
+            // 简单的动画效果
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+
+</html>
