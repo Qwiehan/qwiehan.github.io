@@ -82,7 +82,7 @@
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 1200px 40px rgba(0, 0, 0, 0.12);
         }
 
         /* 个人信息区域 */
@@ -351,7 +351,7 @@
         <header class="header">
             <img src="title.png" alt="网站标题" style="width:60vw; margin:0 auto; display:block;">
             <h1 class="site-title">我的个人主页</h1>
-            <p class="site-subtitle">欢迎来到我的个人空间，分享技术、生活和思考</p>
+            <p class="site-subtitle">欢迎来到我的个人空间，分享技术、生活和道观</p>
         </header>
 
         <!-- 个人信息区域 -->
@@ -360,23 +360,23 @@
             <div class="profile-content">
                 <h2 class="section-title"><i class="fas fa-user"></i> 个人信息</h2>
                 <div class="profile-details">
-                    <div class="detail-item">
+                    <div class="link-card">
                         <div class="detail-label">昵称</div>
                         <div class="detail-value">Qwiehan</div>
                     </div>
-                    <div class="detail-item">
+                    <div class="link-card">
                         <div class="detail-label">所在地</div>
                         <div class="detail-value">家中 or 学校</div>
                     </div>
-                    <div class="detail-item">
+                    <div class="link-card">
                         <div class="detail-label">坐牢经验</div>
                         <div class="detail-value">在学校坐过几年劳，至今仍在服刑</div>
                     </div>
-                    <div class="detail-item">
+                    <div class="link-card">
                         <div class="detail-label">专业方向</div>
                         <div class="detail-value">打游戏</div>
                     </div>
-                    <div class="detail-item">
+                    <div class="link-card">
                         <div class="detail-label">成就</div>
                         <div class="detail-value">曾经在睡着的情况下写完一套试卷</div>
                     </div>
@@ -392,27 +392,45 @@
             </div>
         </section>
 
-        <!-- 兴趣爱好 -->
-        <!--<section class="card">
-            <h2 class="section-title"><i class="fas fa-heart"></i> 兴趣爱好</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: 15px;">
-                <div style="background: rgba(0, 120, 212, 0.1); color: #0078d4; padding: 10px 20px; border-radius: 20px; font-weight: 500;">
-                    <i class="fas fa-book"></i> 技术阅读
+        <!--我爱的MUSIC-->
+        <section class="card">
+            <h2 class="section-title"><i class="fas fa-music"></i> 我喜欢的MUSIC</h2>
+            <div class="profile-section">
+                <div class="link-card">
+                    <div>
+                        <div style="line-height: 1.8; color: #444; font-size: 2rem;">1.爱迷挽歌</div>
+                        <iframe
+                            src="//player.bilibili.com/player.html?isOutside=true&aid=877193&bvid=BV1ks411o7gQ&cid=1275133&p=1"
+                            style="border: 0; width: 100%;"></iframe>
+                        <div>饿啊，太好听了</div>
+                        <div>虽然没听几遍</div>
+                        <div style="color: #999;">(也就百来遍吧)</div>
+                    </div>
                 </div>
-                <div style="background: rgba(0, 120, 212, 0.1); color: #0078d4; padding: 10px 20px; border-radius: 20px; font-weight: 500;">
-                    <i class="fas fa-hiking"></i> 户外运动
+                                <div class="link-card">
+                    <div>
+                        <div style="line-height: 1.8; color: #444; font-size: 2rem;">2.马赛克卷</div>
+                        <iframe
+                            src="//player.bilibili.com/player.html?isOutside=true&aid=849347000&bvid=BV1LL4y1p7Ky&cid=445233797&p=1"
+                            style="border: 0;width: 100%;"></iframe>
+                        <div>神中神！</div>
+                        <div>我必须每天循环播放10遍</div>
+                        <div>太豪庭了</div>
+                    </div>
                 </div>
-                <div style="background: rgba(0, 120, 212, 0.1); color: #0078d4; padding: 10px 20px; border-radius: 20px; font-weight: 500;">
-                    <i class="fas fa-camera"></i> 摄影
-                </div>
-                <div style="background: rgba(0, 120, 212, 0.1); color: #0078d4; padding: 10px 20px; border-radius: 20px; font-weight: 500;">
-                    <i class="fas fa-music"></i> 音乐
-                </div>
-                <div style="background: rgba(0, 120, 212, 0.1); color: #0078d4; padding: 10px 20px; border-radius: 20px; font-weight: 500;">
-                    <i class="fas fa-gamepad"></i> 游戏开发
+                                                <div class="link-card">
+                    <div>
+                        <div style="line-height: 1.8; color: #444; font-size: 2rem;">2.誓见&视奸</div>
+                        <iframe
+                            src="//player.bilibili.com/player.html?isOutside=true&aid=115117320576915&bvid=BV1JThqzwEGq&cid=32051494931&p=1"
+                            style="border: 0;width: 100%;"></iframe>
+                        <div>我愿意！！！</div>
+                        <div>‎ </div>
+                        <div>‎ </div>
+                    </div>
                 </div>
             </div>
-        </section>-->
+        </section>
 
         <!-- 友情链接区域 -->
         <section class="card">
@@ -453,8 +471,7 @@
                     </div>
                     <div class="link-url">我的抖音个人空间</div>
                 </a>
-                <a href="tools.html"
-                    target="_blank" rel="noopener noreferrer" class="link-card">
+                <a href="tools.html" target="_blank" rel="noopener noreferrer" class="link-card">
                     <div class="link-icon">
                         <img src="/photos/cb.png" style="width: 40px; height: 40px; object-fit: cover;">
                     </div>
