@@ -1,196 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head>
+<html lang="zh-CN">
+
+<head>
     <link rel="icon" href="icon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>妙妙小工具</title>
-    <style>
-        /* 基础样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
-            /* 使用back.png作为背景 */
-            background:
-                linear-gradient(rgba(245, 247, 250, 0.562), rgba(228, 232, 240, 0.541)),
-                /* 半透明遮罩让文字更清晰 */
-                url('back.png') center center fixed;
-            background-size: cover;
-            /* 背景图铺满 */
-            background-attachment: fixed;
-            /* 固定背景 */
-            background-repeat: no-repeat;
-            min-height: 100vh;
-            color: #1a1a1a;
-            line-height: 1.6;
-        }
-
-        ， {
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-            min-height: 100vh;
-            color: #1a1a1a;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* 头部区域 */
-        .header {
-            text-align: center;
-            padding: 40px 0 30px;
-        }
-
-        .site-title {
-            font-size: 2.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #0078d4, #106ebe);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-        }
-
-        .site-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            font-weight: 400;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.267);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-        }
-
-
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .link-card {
-            background: rgba(255, 255, 255, 0.178);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .link-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.178);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .link-icon {
-            font-size: 2rem;
-            color: #0078d4;
-            margin-bottom: 15px;
-        }
-
-        .link-url {
-            color: #0078d4;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-     
-
-        /* 页脚 */
-        .footer {
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 40px;
-            color: #666;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .footer p {
-            margin-bottom: 10px;
-        }
-
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .site-title {
-                font-size: 2.2rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .profile-details,
-            .projects-grid,
-            .skills-grid,
-            .links-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .site-title {
-                font-size: 1.8rem;
-            }
-
-            .card {
-                padding: 20px;
-            }
-
-            .avatar {
-                width: 120px;
-                height: 120px;
-            }
-        }
-
-        /* 动画效果 */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .card {
-            animation: fadeIn 0.6s ease-out;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css" <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -202,7 +19,7 @@
             <p class="site-subtitle">转载作品会表明作者</p>
         </header>
 
- 
+
         <!-- 友情链接区域 -->
         <section class="card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
             <div class="links-grid">
@@ -210,7 +27,7 @@
                 <a href="air" target="_blank" rel="noopener noreferrer" class="link-card">
                     <div class="link-url">棍母生成器（文字转棍母） by _饺_</div>
                 </a>
-                
+
                 <a href="mccmc.html" target="_blank" rel="noopener noreferrer" class="link-card">
                     <div class="link-url">Minecraft 指令音乐压缩程序 by _饺_</div>
                 </a>
@@ -221,87 +38,87 @@
                 <a href="EatAncestors/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">吃掉山本 by dislink</div>
-              </a>
+                </a>
                 <a href="EatLiYong/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">吃掉李勇 by dislink</div>
-              </a>
+                </a>
                 <a href="img2mcfunction/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">图片转MC函数 by dislink</div>
-              </a>
+                </a>
                 <a href="mcfunction2bdx/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">MC函数转.BDX by dislink</div>
-              </a>
+                </a>
                 <a href="mcfunction2mcstructure/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">MC函数转MC结构 by dislink</div>
-              </a>
-             </a>
+                </a>
+                </a>
                 <a href="mcfunctionconvertor/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">MC函数转转换器 by dislink</div>
-              </a>
-             </a>
+                </a>
+                </a>
                 <a href="midi2bdx/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">MIDI转.BDX by dislink</div>
-              </a>
-                              <a href="midi2mcfunction/" target="_blank" rel="noopener noreferrer" class="link-card">
+                </a>
+                <a href="midi2mcfunction/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">MIDI转MC函数 by dislink</div>
-              </a>
-              </a>
-                              <a href="midi2mcstructure/" target="_blank" rel="noopener noreferrer" class="link-card">
+                </a>
+                </a>
+                <a href="midi2mcstructure/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">MIDI转MC结构 by dislink</div>
-              </a>
-              </a>
-                              <a href="midi2tiles/" target="_blank" rel="noopener noreferrer" class="link-card">
+                </a>
+                </a>
+                <a href="midi2tiles/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">MIDI转MC瀑布雨 by dislink</div>
-              </a>
-              </a>
-                              <a href="midiconvertor/" target="_blank" rel="noopener noreferrer" class="link-card">
+                </a>
+                </a>
+                <a href="midiconvertor/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">MIDI转换器 by dislink</div>
-              </a>
-              </a>
-                              <a href="progressbar/" target="_blank" rel="noopener noreferrer" class="link-card">
+                </a>
+                </a>
+                <a href="progressbar/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">MC函数进度条生成器 by dislink</div>
-              </a>
-                            </a>
-                              <a href="rawJSONEditor/" target="_blank" rel="noopener noreferrer" class="link-card">
+                </a>
+                </a>
+                <a href="rawJSONEditor/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">原始JSON编辑器 by dislink</div>
-              </a>
-                            </a>
-                              <a href="text2mcfunction/" target="_blank" rel="noopener noreferrer" class="link-card">
+                </a>
+                </a>
+                <a href="text2mcfunction/" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">粒子文字生成器 by dislink</div>
-              </a>
-                            </a>
-                              <a href="null.html" target="_blank" rel="noopener noreferrer" class="link-card">
+                </a>
+                </a>
+                <a href="null.html" target="_blank" rel="noopener noreferrer" class="link-card">
 
                     <div class="link-url">字符画生成器 by dislink</div>
-              </a>
+                </a>
             </div>
         </section>
 
-      
+
 
         <!-- 页脚 -->
         <footer class="footer">
             <p id="footerText">你考清华，我烤地瓜，我们都有光明的未来</p>
         </footer>
     </div>
-
-    <script>
+    <script src="jquery.min.js"></script>
+    <script src="pace.min.js">
         // 简单的交互效果
         document.addEventListener('DOMContentLoaded', function () {
-           
+
             // 为卡片添加悬停效果
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
@@ -334,5 +151,8 @@
     </script>
 
 
-<div id="aix-action-loading-host"></div><script src="chrome-extension://pljfekbkmmbkdfhddpebdlmfngigcohc/content/windowDataMessage.js"></script></body></html>
+    <div id="aix-action-loading-host"></div>
+    <script src="chrome-extension://pljfekbkmmbkdfhddpebdlmfngigcohc/content/windowDataMessage.js"></script>
+</body>
 
+</html>

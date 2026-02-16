@@ -68,7 +68,7 @@
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 1200px 40px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
         .profile-section {
             display: flex;
@@ -77,9 +77,9 @@
         }
 
         .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border-radius: 49%;
             object-fit: cover;
             border: 6px solid rgba(255, 255, 255, 0.158);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
@@ -91,8 +91,10 @@
         }
 
         .section-title {
+            right: 50%;
             font-size: 1.8rem;
             font-weight: 700;
+            
             margin-bottom: 20px;
             color: #1a1a1a;
             display: flex;

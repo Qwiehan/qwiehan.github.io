@@ -21,9 +21,9 @@
 
         <!-- 个人信息区域 -->
         <section class="card profile-section">
-            <img src="head.jpg" alt="个人头像" class="avatar" id="titleImage">
+
             <div class="profile-content">
-                <h2 class="section-title"><i class="fas fa-user"></i> 个人信息</h2>
+                <h2 class="section-title"><img src="head.jpg" alt="个人头像" class="avatar" id="titleImage"> 个人信息</h2>
                 <div class="profile-details">
                     <div class="link-card">
                         <div class="detail-label">昵称</div>
@@ -45,6 +45,7 @@
                         <div class="detail-label">成就</div>
                         <div class="detail-value">曾经在睡着的情况下写完一套试卷</div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -60,39 +61,33 @@
         <!--我爱的MUSIC-->
         <section class="card">
             <h2 class="section-title"><i class="fas fa-music"></i> 我喜欢的MUSIC</h2>
-            <div class="profile-section">
+            <div class="profile-details">
                 <div class="link-card">
-                    <div>
-                        <div style="line-height: 1.8; color: #444; font-size: 2rem;">1.爱迷挽歌</div>
-                        <iframe
-                            src="//player.bilibili.com/player.html?isOutside=true&aid=877193&bvid=BV1ks411o7gQ&cid=1275133&p=1"
-                            style="border: 0; width: 100%;"></iframe>
-                        <div>饿啊，太好听了</div>
-                        <div>虽然没听几遍</div>
-                        <div style="color: #999;">(也就百来遍吧)</div>
-                    </div>
+                    <div class="detail-value">1.爱迷挽歌</div>
+                    <iframe
+                        src="//player.bilibili.com/player.html?isOutside=true&aid=877193&bvid=BV1ks411o7gQ&cid=1275133&p=1"
+                        style="border: 0; width: 100%;"></iframe>
+                    <div class="detail-label">饿啊，太好听了</div>
+                    <div class="detail-label">虽然没听几遍</div>
+                    <div style="color: #999;" class="detail-label">(也就百来遍吧)</div>
                 </div>
-                                <div class="link-card">
-                    <div>
-                        <div style="line-height: 1.8; color: #444; font-size: 2rem;">2.马赛克卷</div>
-                        <iframe
-                            src="//player.bilibili.com/player.html?isOutside=true&aid=849347000&bvid=BV1LL4y1p7Ky&cid=445233797&p=1"
-                            style="border: 0;width: 100%;"></iframe>
-                        <div>神中神！</div>
-                        <div>我必须每天循环播放10遍</div>
-                        <div>太豪庭了</div>
-                    </div>
+                <div class="link-card">
+                    <div class="detail-value">2.马赛克卷</div>
+                    <iframe
+                        src="//player.bilibili.com/player.html?isOutside=true&aid=849347000&bvid=BV1LL4y1p7Ky&cid=445233797&p=1"
+                        style="border: 0; width: 100%;"></iframe>
+                    <div class="detail-label">神中神！</div>
+                    <div class="detail-label">我必须每天循环播放10遍</div>
+                    <div class="detail-label">太豪庭了</div>
                 </div>
-                                                <div class="link-card">
-                    <div>
-                        <div style="line-height: 1.8; color: #444; font-size: 2rem;">2.誓见&视奸</div>
-                        <iframe
-                            src="//player.bilibili.com/player.html?isOutside=true&aid=115117320576915&bvid=BV1JThqzwEGq&cid=32051494931&p=1"
-                            style="border: 0;width: 100%;"></iframe>
-                        <div>我愿意！！！</div>
-                        <div>‎ </div>
-                        <div>‎ </div>
-                    </div>
+                <div class="link-card">
+                    <div class="detail-value">2.誓见&视奸</div>
+                    <iframe
+                        src="//player.bilibili.com/player.html?isOutside=true&aid=115117320576915&bvid=BV1JThqzwEGq&cid=32051494931&p=1"
+                        style="border: 0; width: 100%;"></iframe>
+                    <div class="detail-label">我愿意！！！</div>
+                    <div class="detail-label">‎</div>
+                    <div class="detail-label">‎</div>
                 </div>
             </div>
         </section>
@@ -153,7 +148,8 @@
             </p>
         </footer>
     </div>
-    <script src="jquery.min.js"></script><script src="pace.min.js">
+    <script src="jquery.min.js"></script>
+    <script src="pace.min.js">
         // 简单的交互效果
         document.addEventListener('DOMContentLoaded', function () {
             // 更新版权年份
