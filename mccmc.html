@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <link rel="icon" href="icon.png" type="image/x-icon">
     <meta charset="UTF-8">
@@ -451,29 +452,30 @@
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="container">
         <header class="header">
-                        <img src="photos/MCC.png" alt="网站标题" style="width:60vw; margin:0 auto; display:block;">
+            <img src="photos/MCC.png" alt="网站标题" style="width:60vw; margin:0 auto; display:block;">
             <h1 class="site-title">🎮 Minecraft函数解析器</h1>
             <p class="site-subtitle">解析和优化Minecraft函数命令</p>
         </header>
 
         <section class="card config-section">
             <h2 class="config-title"><i class="fas fa-cog"></i> 基本设置</h2>
-            
+
             <div class="config-row">
                 <div class="config-item">
                     <label for="timeScoreboard">计分板名称</label>
                     <input type="text" id="timeScoreboard" value="time" placeholder="输入计分板名称">
                 </div>
             </div>
-            
+
             <div class="checkbox-group">
                 <input type="checkbox" id="sensitiveWord" checked>
                 <label for="sensitiveWord">开启敏感词调整</label>
             </div>
-            
+
             <div class="sensitive-words-list">
                 <strong>敏感词列表：</strong>
                 <span>64, 604, 731, 918, 1989, 6004, 6464, 6489, 8964</span>
@@ -488,12 +490,12 @@
                 <div class="input-header">
                     <div class="input-title">输入命令</div>
                 </div>
-                
+
                 <div class="input-type">
                     <div class="type-btn active" onclick="setInputType('text')">自定义输入</div>
                     <div class="type-btn" onclick="setInputType('file')">选择文件</div>
                 </div>
-                
+
                 <div id="fileSection" class="hidden">
                     <div class="file-upload-btn" onclick="document.getElementById('fileInput').click()">
                         <i class="fas fa-upload"></i> 选择文件
@@ -501,13 +503,13 @@
                     <input type="file" id="fileInput" accept=".mcfunction,.txt" class="hidden">
                     <div class="file-name" id="fileName">未选择文件</div>
                 </div>
-                
+
                 <textarea id="commandInput" placeholder="输入Minecraft函数命令，每行一个命令..."></textarea>
             </div>
         </section>
 
-        <button class="process-btn" onclick="processCommands()">🚀 开始处理</button>
-        
+        <button class="process-btn" onclick="compileMusic()">🚀 开始处理</button>
+
         <section class="card">
             <div class="output-section">
                 <div class="output-header">
@@ -521,349 +523,47 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <textarea id="outputContent" readonly></textarea>
                 <div class="info-text">处理完成后，点击下载按钮保存文件或复制按钮复制内容</div>
             </div>
         </section>
 
-                <section class="card">
+        <section class="card">
             <div class="output-section">
                 <div class="output-header">
                     <div class="output-title">教程文档&注意事项</div>
                 </div>
-                <div>1.传入文件的指令需要包含代表时间的计分板名称、tick值、音量、音调、音色。例如：execute as @a【scores={time=114514}】 at @s run playsound note.harp @s ~~~ 1 1</div>
+                <div>1.传入文件的指令需要包含代表时间的计分板名称、tick值、音量、音调、音色。例如：execute as @a【scores={time=114514}】 at @s run playsound
+                    note.harp @s ~~~ 1 1</div>
 
-<div>2.在写注意事项的时候up才想起来有一点没做好，使用我这个程序playsound的坐标必须写~~~，不然会有问题。up等会就改</div>
+                <div>2.在写注意事项的时候up才想起来有一点没做好，使用我这个程序playsound的坐标仅支持~~~，~ ~ ~或者~~6~，否则会出现问题</div>
 
-<div>3.请确保文件中没有连续的两个及以上的换行符，不然getline读取每一样处理好像会有问题。</div>
+                <div>3.请确保文件中没有连续的两个及以上的换行符，不然getline读取每一样处理好像会有问题。</div>
 
-<div>4.请确保文件中的指令没有多余的空格，标准形式execute as @a【scores={time=xxx}】 at @s run playsound note.harp @s ~~~ x x x。比如“~~~”不要写成“~ ~ ~”，不然直接爆错给你看😡</div>
+                <div>4.请确保文件中的指令没有多余的空格，标准形式execute as @a【scores={time=xxx}】 at @s run playsound note.harp @s ~~~ x x
+                    x。比如“~~~”不要写成“~ ~ ~”，不然直接爆错给你看😡</div>
 
             </div>
         </section>
 
-                <section class="card">
+        <section class="card">
             <div class="output-section">
                 <div class="output-header">
                     <div class="output-title">联系作者&网站管理员</div>
                 </div>
 
                 <div><a href="https://qm.qq.com/q/Eat2UltnvW">交流群（作者_饺_和Qwiehan都在里面）</a></div>
-            <div><a href="https://space.bilibili.com/3494379144612473">_饺_的Bilibili主页</a></div>
-              <div>  <a href="https://space.bilibili.com/3546608916498567">Qwiehan的Bilibili个人主页</a></div>
-            <div>Qwiehan(网站管理员)のQQ号 3801513779</div>
-            <div>_饺_(作者)のQQ号 3027916141</div>
+                <div><a href="https://space.bilibili.com/3494379144612473">_饺_的Bilibili主页</a></div>
+                <div> <a href="https://space.bilibili.com/3546608916498567">Qwiehan的Bilibili个人主页</a></div>
+                <div>Qwiehan(网站管理员)のQQ号 3801513779</div>
+                <div>_饺_(作者)のQQ号 3027916141</div>
             </div>
         </section>
 
-    <script>
-        // 敏感词集合
-        const sensitiveWordSet = new Set([64, 604, 731, 918, 1989, 6004, 6464, 6489, 8964]);
-        
-        // DOM元素
-        const commandInput = document.getElementById('commandInput');
-        const outputContent = document.getElementById('outputContent');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const copyBtn = document.getElementById('copyBtn');
-        const fileInput = document.getElementById('fileInput');
-        const fileSection = document.getElementById('fileSection');
-        const fileName = document.getElementById('fileName');
-        
-        let uploadedFile = null;
-        let inputType = 'text';
-        
-        // 设置输入类型
-        function setInputType(type) {
-            inputType = type;
-            
-            // 更新按钮状态
-            document.querySelectorAll('.type-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelectorAll('.type-btn')[type === 'text' ? 0 : 1].classList.add('active');
-            
-            // 显示/隐藏文件上传区域
-            if (type === 'file') {
-                fileSection.classList.remove('hidden');
-                commandInput.placeholder = "请先选择文件...";
-                commandInput.disabled = true;
-            } else {
-                fileSection.classList.add('hidden');
-                commandInput.placeholder = "输入Minecraft函数命令，每行一个命令...";
-                commandInput.disabled = false;
-            }
-        }
-        
-        // 文件选择处理
-        fileInput.addEventListener('change', async function(e) {
-            if (e.target.files.length > 0) {
-                uploadedFile = e.target.files[0];
-                fileName.textContent = `已选择: ${uploadedFile.name} (${formatFileSize(uploadedFile.size)})`;
-                
-                // 读取文件内容并显示在输入框
-                try {
-                    const text = await uploadedFile.text();
-                    commandInput.value = text;
-                } catch (error) {
-                    alert('读取文件失败: ' + error.message);
-                }
-            }
-        });
-        
-        // 格式化文件大小
-        function formatFileSize(bytes) {
-            if (bytes === 0) return '0 B';
-            const k = 1024;
-            const sizes = ['B', 'KB', 'MB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-        }
-        
-        // 敏感词调整函数
-        function sensitive(str) {
-            const beat = parseInt(str);
-            if (sensitiveWordSet.has(beat)) {
-                const adjustedBeat = beat - 1;
-                return {
-                    adjusted: true,
-                    value: adjustedBeat.toString()
-                };
-            }
-            return {
-                adjusted: false,
-                value: str
-            };
-        }
-        
-        // 解析单行命令
-        function parseCommand(line, timeScoreboard, enableSensitive) {
-            const timePattern = timeScoreboard + '=';
-            const beatPosBegin = line.indexOf(timePattern) + timePattern.length;
-            
-            if (beatPosBegin === -1 + timePattern.length) {
-                return null;
-            }
-            
-            const tmpEnd1 = line.indexOf("}]", beatPosBegin);
-            const tmpEnd2 = line.indexOf(',', beatPosBegin);
-            
-            let beatPosEnd;
-            if (tmpEnd2 === -1 || tmpEnd2 > tmpEnd1) {
-                beatPosEnd = tmpEnd1 - 1;
-            } else {
-                beatPosEnd = tmpEnd2 - 1;
-            }
-            
-            if (beatPosEnd < beatPosBegin) {
-                return null;
-            }
-            
-            const beatLen = beatPosEnd - beatPosBegin + 1;
-            let beat = line.substr(beatPosBegin, beatLen);
-            
-            let sensitiveAdjusted = false;
-            if (enableSensitive) {
-                const sensitiveResult = sensitive(beat);
-                if (sensitiveResult.adjusted) {
-                    beat = sensitiveResult.value;
-                    sensitiveAdjusted = true;
-                }
-            }
-            
-            const playsoundIndex = line.indexOf("playsound");
-            const volumePosBegin = line.indexOf("~~~ ", playsoundIndex + 10) + 4;
-            const pitchPosBegin = line.indexOf(' ', volumePosBegin) + 1;
-            const volumePosEnd = line.indexOf(' ', volumePosBegin) - 1;
-            
-            if (volumePosEnd < volumePosBegin) {
-                return null;
-            }
-            
-            const volumeLen = volumePosEnd - volumePosBegin + 1;
-            const volume = line.substr(volumePosBegin, volumeLen);
-            
-            let pitch = line.substr(pitchPosBegin);
-            if (pitch.indexOf(' ') !== -1) {
-                pitch = pitch.substr(0, pitch.indexOf(' '));
-            }
-            
-            const instrumentPosBegin = playsoundIndex + 10;
-            const instrumentPosEnd = line.indexOf('@', instrumentPosBegin) - 2;
-            
-            if (instrumentPosEnd < instrumentPosBegin) {
-                return null;
-            }
-            
-            const instrumentLen = instrumentPosEnd - instrumentPosBegin + 1;
-            const instrument = line.substr(instrumentPosBegin, instrumentLen);
-            
-            return {
-                instrument,
-                pitch,
-                volume,
-                beat,
-                sensitiveAdjusted,
-                originalLine: line
-            };
-        }
-        
-        // 主处理函数
-        function processCommands() {
-            const enableSensitive = document.getElementById('sensitiveWord').checked;
-            const timeScoreboard = document.getElementById('timeScoreboard').value.trim() || 'time';
-            
-            let commands = [];
-            
-            if (inputType === 'text') {
-                const text = commandInput.value.trim();
-                if (!text) {
-                    alert('请输入命令');
-                    return;
-                }
-                commands = text.split('\n').filter(line => line.trim());
-            } else if (inputType === 'file') {
-                const text = commandInput.value.trim();
-                if (!text) {
-                    alert('请先选择文件');
-                    return;
-                }
-                commands = text.split('\n').filter(line => line.trim());
-            }
-            
-            if (commands.length === 0) {
-                alert('没有可处理的命令');
-                return;
-            }
-            
-            // 处理命令
-            const dataMap = new Map();
-            let totalSensitiveAdjustments = 0;
-            let processedCommands = 0;
-            
-            commands.forEach(line => {
-                const parsed = parseCommand(line, timeScoreboard, enableSensitive);
-                if (parsed) {
-                    processedCommands++;
-                    
-                    if (parsed.sensitiveAdjusted) {
-                        totalSensitiveAdjustments++;
-                    }
-                    
-                    if (!dataMap.has(parsed.instrument)) {
-                        dataMap.set(parsed.instrument, new Map());
-                    }
-                    
-                    const instrumentMap = dataMap.get(parsed.instrument);
-                    
-                    if (!instrumentMap.has(parsed.pitch)) {
-                        instrumentMap.set(parsed.pitch, []);
-                    }
-                    
-                    instrumentMap.get(parsed.pitch).push({
-                        volume: parsed.volume,
-                        beat: parsed.beat
-                    });
-                }
-            });
-            
-            // 生成输出命令
-            let outputLines = [];
-            
-            dataMap.forEach((pitchMap, instrument) => {
-                pitchMap.forEach((couples, pitch) => {
-                    let line = `execute as @a at @s unless entity @s[scores={`;
-                    
-                    couples.forEach((couple, index) => {
-                        line += `time=!${couple.beat}`;
-                        if (index + 1 !== couples.length) {
-                            line += `,`;
-                        }
-                    });
-                    
-                    line += `}] run playsound ${instrument} @s ~~~ ${couples[0].volume} ${pitch}`;
-                    outputLines.push(line);
-                });
-            });
-            
-            // 显示结果
-            outputContent.value = outputLines.join('\n');
-            
-            // 启用按钮
-            downloadBtn.disabled = false;
-            copyBtn.disabled = false;
-            
-            // 显示处理信息
-            alert(`处理完成！\n处理命令: ${processedCommands}条\n敏感词调整: ${totalSensitiveAdjustments}次\n生成命令: ${outputLines.length}条`);
-        }
-        
-        // 下载文件
-        function downloadFile() {
-            const content = outputContent.value;
-            if (!content) {
-                alert('没有内容可下载');
-                return;
-            }
-            
-            const blob = new Blob([content], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            
-            // 尝试使用文件系统API（现代浏览器）
-            if ('showSaveFilePicker' in window) {
-                try {
-                    window.showSaveFilePicker({
-                        suggestedName: 'output.mcfunction',
-                        types: [{
-                            description: 'Minecraft函数文件',
-                            accept: { 'text/plain': ['.mcfunction'] }
-                        }]
-                    }).then(fileHandle => {
-                        fileHandle.createWritable().then(writable => {
-                            writable.write(content);
-                            writable.close();
-                            alert('文件保存成功！');
-                        });
-                    }).catch(err => {
-                        if (err.name !== 'AbortError') {
-                            fallbackDownload(url);
-                        }
-                    });
-                } catch (err) {
-                    fallbackDownload(url);
-                }
-            } else {
-                fallbackDownload(url);
-            }
-            
-            function fallbackDownload(url) {
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'output.mcfunction';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                alert('文件下载完成！');
-            }
-        }
-        
-        // 复制到剪贴板
-        function copyToClipboard() {
-            const content = outputContent.value;
-            if (!content) {
-                alert('没有内容可复制');
-                return;
-            }
-            
-            navigator.clipboard.writeText(content).then(() => {
-                alert('内容已复制到剪贴板！');
-            }).catch(err => {
-                // 回退方案
-                outputContent.select();
-                document.execCommand('copy');
-                alert('内容已复制到剪贴板！');
-            });
-        }
-    </script>
+        <script src="jquery.min.js"></script>
+        <script src="pace.min.js"></script>
+        <script src="mccmc.js"></script>
 </body>
+
 </html>
