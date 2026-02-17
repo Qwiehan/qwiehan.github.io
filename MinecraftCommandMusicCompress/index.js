@@ -1,4 +1,5 @@
             let sensitiveWordAns = 0;
+            //设置敏感词
             const sensitiveWordSet = new Set([64, 604, 731, 918, 1989, 6004, 6464, 6489, 8964]);
 
             class CommandPair {
@@ -142,7 +143,7 @@
 
                     const target = document.getElementById('fuck_netease');
 
-                    target.insertAdjacentHTML('afterend', '<section id="aaabbb" class="card output"><div class="output-section"><div class="output-header"><div class="output-title">输出结果</div><div class="output-controls"><button class="download-btn" id="downloadBtn" onclick="downloadFile()" disabled><i class="fas fa-download"></i> 下载</button><button class="copy-btn" id="copyBtn" onclick="copyToClipboard()" disabled><i class="fas fa-copy"></i> 复制</button></div></div><textarea id="outputContent" readonly></textarea><div class="info-text">处理完成后，点击下载按钮保存文件或复制按钮复制内容</div></div></section>');
+                    target.insertAdjacentHTML('afterend', '<section id="aaabbb" class="card output"><div class="output-section"><div class="output-header"><h2 class="config-title"><i class="fas fa-code"></i> 输出结果</h2><div class="output-controls"><button class="download-btn" id="downloadBtn" onclick="downloadFile()" disabled><i class="fas fa-download"></i> 下载</button><button class="copy-btn" id="copyBtn" onclick="copyToClipboard()" disabled><i class="fas fa-copy"></i> 复制</button></div></div><textarea id="outputContent" readonly></textarea><div class="info-text">处理完成后，点击下载按钮保存文件或复制按钮复制内容</div></div></section>');
 
                     console.log('跳过创建输出窗口，因为输出窗口已存在');
                 }
@@ -160,7 +161,7 @@
                     }
                 }
 
-
+        //这是一个高级的下载函数
         }
             function downloadFile() {
                 const output = document.getElementById('outputContent').value;
@@ -177,7 +178,7 @@
                 URL.revokeObjectURL(url);
                 console.log('成功下载')
             }
-
+        //高级的复制函数
             function copyToClipboard() {
                 const output = document.getElementById('outputContent').value;
                 if (!output) return;
