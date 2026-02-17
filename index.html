@@ -11,15 +11,19 @@
 </head>
 
 <body>
+
     <div class="container">
-        <!-- 网站头部 -->
         <header class="header">
+
             <img src="title.png" alt="网站标题" style="width:60vw; margin:0 auto; display:block;">
             <h1 class="title" style="color: red;">🎉新年快乐🎉</h1>
+            <p id="hxm_text">一言加载中……</p>
+            <p id="hxm_from">出处加载中……</p>
+
+            <script src="https://api.hanximeng.com/hitokoto/api.php?type=js" defer></script>
 
         </header>
 
-        <!-- 个人信息区域 -->
         <section class="card profile-section">
 
             <div class="profile-content">
@@ -63,28 +67,49 @@
             <h2 class="section-title"><i class="fas fa-music"></i> 我喜欢的MUSIC</h2>
             <div class="profile-details">
                 <div class="link-card">
+                    <script>
+                        fetch('https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1ks411o7gQ/')
+                            .then(res => res.json())
+                            .then(data => {
+                                const videoUrl = data.data[0].video_url;
+                                document.getElementById('video_1').src = videoUrl;
+                            })
+                            .catch(err => alert('获取视频地址失败：' + err));
+                    </script>
                     <div class="detail-value">1.爱迷挽歌</div>
-                    <iframe
-                        src="//player.bilibili.com/player.html?isOutside=true&aid=877193&bvid=BV1ks411o7gQ&cid=1275133&p=1"
-                        style="border: 0; width: 100%;"></iframe>
+                    <iframe id="video_1" style="border: 0; width: 100%;"></iframe>
                     <div class="detail-label">饿啊，太好听了</div>
                     <div class="detail-label">虽然没听几遍</div>
                     <div style="color: #999;" class="detail-label">(也就百来遍吧)</div>
                 </div>
                 <div class="link-card">
+                    <script>
+                        fetch('https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1LL4y1p7Ky/')
+                            .then(res => res.json())
+                            .then(data => {
+                                const videoUrl = data.data[0].video_url;
+                                document.getElementById('video_2').src = videoUrl;
+                            })
+                            .catch(err => alert('获取视频地址失败：' + err));
+                    </script>
                     <div class="detail-value">2.马赛克卷</div>
-                    <iframe
-                        src="//player.bilibili.com/player.html?isOutside=true&aid=849347000&bvid=BV1LL4y1p7Ky&cid=445233797&p=1"
-                        style="border: 0; width: 100%;"></iframe>
+                    <iframe id="video_2" style="border: 0; width: 100%;"></iframe>
                     <div class="detail-label">神中神！</div>
                     <div class="detail-label">我必须每天循环播放10遍</div>
                     <div class="detail-label">太豪庭了</div>
                 </div>
                 <div class="link-card">
+                    <script>
+                        fetch('https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1JThqzwEGq/')
+                            .then(res => res.json())
+                            .then(data => {
+                                const videoUrl = data.data[0].video_url;
+                                document.getElementById('video_3').src = videoUrl;
+                            })
+                            .catch(err => alert('获取视频地址失败：' + err));
+                    </script>
                     <div class="detail-value">2.誓见&视奸</div>
-                    <iframe
-                        src="//player.bilibili.com/player.html?isOutside=true&aid=115117320576915&bvid=BV1JThqzwEGq&cid=32051494931&p=1"
-                        style="border: 0; width: 100%;"></iframe>
+                    <iframe id="video_3" style="border: 0; width: 100%;"></iframe>
                     <div class="detail-label">我愿意！！！</div>
                     <div class="detail-label">‎</div>
                     <div class="detail-label">‎</div>
